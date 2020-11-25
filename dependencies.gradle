@@ -1,0 +1,66 @@
+ext {
+    bootStarter = "org.springframework.boot:spring-boot-starter"
+
+
+    /**Example: spring boot devtools, lombok, mapstruct, spring configuration processor**/
+    developerTool = [
+            mapStruct         : "org.mapstruct:mapstruct-jdk8:$mapStruct",
+            lombok            : "org.projectlombok:lombok",
+            mapStructProcessor: "org.mapstruct:mapstruct-processor:$mapStruct"
+    ]
+
+    /**Example: spring web, spring reactive web, rest repositories, spring session, rest repositories HAL Browser,
+     spring hateoas, spring web services, jersey, vaadin**/
+    web = [
+            starterWeb    : "org.springframework.boot:spring-boot-starter-web",
+    ]
+
+    /**Example:thymeleaf, apache freemaker, mustache, groovy templates**/
+    templateEngine = [
+    ]
+
+    /**Example:spring security, OAuth2 client, OAuth2 resource server, spring ldap, Okta**/
+    security = [
+            starterSecurity: 'org.springframework.boot:spring-boot-starter-security',
+            oauth2Auto: "org.springframework.cloud:spring-cloud-starter-oauth2",
+    ]
+
+    /**Example:jdbc api, spring data jpa, spring data jdbc, spring data r2dbc, MyBatis framework, liquibase migration, flyway migration,
+     JOOQ access layer, IBM DB2 driver, apache derby database, h2 database, hypersql database, ms sql server driver, mysql driver,
+     oracle driver, PostgreSQL driver
+     **/
+    sql = [
+            dataJPA      : "org.springframework.boot:spring-boot-starter-data-jpa",
+            mySQL        : "mysql:mysql-connector-java",
+    ]
+
+    /**Example:mockito, junit**/
+    testing = [
+            bootStarter: "org.springframework.boot:spring-boot-starter-test"
+    ]
+
+    /**Example:spring integration, spring for RabbitMQ, spring for apache kafka, spring for apache kafka streams,
+     spring for apache activeMQ5, spring for apache activeMQ artemis, websocket, rsocket, apache camel, solace PubSub+**/
+    messaging = []
+
+
+    /**Example:spring batch, validation, java mail sender, quartz scheduler, spring cache abstraction**/
+    io = []
+
+    /**Example:logback, log4j, log4j2**/
+    logs = [
+    ]
+
+    /**Example: Jackson, xmlbind, gson, moshi, fastjson, jsoniter**/
+    parser = [
+    ]
+
+    /**All libraries developed locally**/
+    local = [
+    ]
+    validation = [
+    ]
+
+    /**Anything besides above category**/
+    mics = []
+}
