@@ -21,11 +21,17 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 
     @Bean
     AuthenticationManager customAuthenticationManager() throws Exception {
-        return  super.authenticationManager();
+        return super.authenticationManager();
     }
 
     @Override
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {
         auth.userDetailsService(userDetailsService).passwordEncoder(passwordEncoder);
+    }
+
+    @Override
+    public void configure(WebSecurity web) throws Exception {
+        super.configure(web);
+        web.ignoring().antMatchers( "/fieldValidatorUI/**", "/css/**", "/js/**");
     }
 }

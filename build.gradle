@@ -1,4 +1,5 @@
 buildscript {
+
 	repositories {
 		mavenCentral()
 	}
@@ -19,6 +20,17 @@ apply plugin: 'java'
 sourceCompatibility = '11'
 
 repositories {
+	maven {
+		url "https://gitlab.com/api/v4/groups/10170188/-/packages/maven"
+		name "GitLab"
+		credentials(HttpHeaderCredentials) {
+			name = 'Private-Token'
+			value = gitLabPrivateToken
+		}
+		authentication {
+			header(HttpHeaderAuthentication)
+		}
+	}
 	mavenCentral()
 }
 
@@ -29,7 +41,9 @@ dependencies {
 			security.oauth2Auto,
 			security.starterSecurity,
 			web.starterWeb,
-			developerTool.mapStruct
+			developerTool.mapStruct,
+			security.nimbusJose,
+			local.values(),
 	)
 
 	compileOnly developerTool.lombok

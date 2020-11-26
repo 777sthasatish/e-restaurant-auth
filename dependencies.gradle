@@ -22,7 +22,8 @@ ext {
     /**Example:spring security, OAuth2 client, OAuth2 resource server, spring ldap, Okta**/
     security = [
             starterSecurity: 'org.springframework.boot:spring-boot-starter-security',
-            oauth2Auto: "org.springframework.cloud:spring-cloud-starter-oauth2",
+            nimbusJose: "com.nimbusds:nimbus-jose-jwt:7.3",
+            oauth2Auto: "org.springframework.security.oauth.boot:spring-security-oauth2-autoconfigure:$oAuth2Auto",
     ]
 
     /**Example:jdbc api, spring data jpa, spring data jdbc, spring data r2dbc, MyBatis framework, liquibase migration, flyway migration,
@@ -57,7 +58,16 @@ ext {
 
     /**All libraries developed locally**/
     local = [
+            satishCommon             : "com.satish.common:satish-common:$satishCommon",
+            fieldValidatorJPAAdapter : "com.satish.fieldvalidator.datajpaadapter:satish-field-validator-jpa-adapter:$fieldValidatorJPAAdapter",
+            fieldValidatorMVCAdapter : "com.satish.fieldvalidator.mvcadapter:satish-field-validator-mvc-adapter:$fieldValidatorMVCAdapter",
+            fieldValidatorRestAdapter: "com.satish.fieldvalidator.restadapter:satish-field-validator-rest-adapter:$fieldValidatorRestAdapter",
+            fieldValidatorUI         : "com.satish.fieldvalidator.ui:satish-field-validator-ui:$fieldValidatorUI",
+            fieldValidatorDomain     : "com.satish.fieldvalidator.domain:satish-field-validator-domain:$fieldValidatorDomain",
+            fieldValidatorWebCore    : "com.satish.fieldvalidator.webcore:satish-field-validator-web-core:$fieldValidatorWebCore",
+
     ]
+
     validation = [
     ]
 
